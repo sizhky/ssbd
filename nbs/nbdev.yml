@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "clip-video-classifier"
+  site-url: "https://sizhky.github.io/clip-video-classifier"
+  description: "assignment repo for video classification of ssbd dataset using CLIP"
+  repo-branch: dev
+  repo-url: "https://github.com/sizhky/clip-video-classifier"
