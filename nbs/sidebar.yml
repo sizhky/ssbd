@@ -7,3 +7,4 @@ website:
         contents:
           - data/00_create_annotations.ipynb
           - data/01_download_raw_videos.ipynb
+          - data/02_video_to_frames.ipynb

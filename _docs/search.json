@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "clip-video-classifier",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation."
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "clip-video-classifier",
+    "section": "Install",
+    "text": "Install\npip install clip_video_classifier"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "clip-video-classifier",
+    "section": "How to use",
+    "text": "How to use\nFirst setup your annotations\n$ clip-video-classifier setup-annotations /mnt/347832F37832B388/ml-datasets/ssbd/\n$ clip-video-classifier download-raw-videos /mnt/347832F37832B388/ml-datasets/ssbd/ssbd-release/ /mnt/347832F37832B388/ml-datasets/ssbd/ssbd-raw-videos\n$ clip-video-classifier setup-annotations /mnt/347832F37832B388/ml-datasets/ssbd/ssbd-release --fill-gaps --videos-folder /mnt/347832F37832B388/ml-datasets/ssbd/ssbd-raw-videos"
+  },
+  {
+    "objectID": "data/download_raw_videos.html",
+    "href": "data/download_raw_videos.html",
+    "title": "Download Data",
+    "section": "",
+    "text": "raw_videos_folder = P(\"/mnt/347832F37832B388/ml-datasets/ssbd/ssbd-raw-videos\")"
+  },
+  {
+    "objectID": "00_cli.html",
+    "href": "00_cli.html",
+    "title": "clip-video-classifier",
+    "section": "",
+    "text": "from torch_snippets import *\n\n__root = \"../\""
+  },
+  {
+    "objectID": "data/create_annotations.html",
+    "href": "data/create_annotations.html",
+    "title": "Download Data",
+    "section": "",
+    "text": "Usage\nroot = P(\"/mnt/347832F37832B388/ml-datasets/ssbd/\")\nsetup_annotations(root)\n\n# AFTER DOWNLOADING THE VIDEOS\nroot = P(\"/mnt/347832F37832B388/ml-datasets/ssbd/\")\nsetup_annotations(\n    root,\n    fill_gaps=True,\n    videos_folder=\"/mnt/347832F37832B388/ml-datasets/ssbd/ssbd-raw-videos/\",\n)"
+  },
+  {
+    "objectID": "data/video_to_frames.html",
+    "href": "data/video_to_frames.html",
+    "title": "Download Data",
+    "section": "",
+    "text": "source\n\nextract_frames_for_annotations\n\n extract_frames_for_annotations (annotations_path, videos_folder,\n                                 frames_folder, num_frames_per_sec:int=5,\n                                 side_size:int=256, crop_size:int=256,\n                                 exclude_others:bool=True,\n                                 row_index:int=None)\n\n\nsource\n\n\nvideo_to_frames\n\n video_to_frames (video_path, frames_path, start_sec:int,\n                  clip_duration:float, num_frames_per_sec:int=10,\n                  side_size:int=256, crop_size:int=256)\n\n\nsource\n\n\nget_transform\n\n get_transform (num_frames, side_size, crop_size)\n\n\nroot = P(\"/mnt/347832F37832B388/ml-datasets/ssbd/\")\nannotations_path = root / \"annotations.csv\"\nannotations = pd.read_csv(annotations_path).rename({\"class\": \"activity\"}, axis=1)\n\nUsage for a single video\nroot = P(\"/mnt/347832F37832B388/ml-datasets/ssbd/\")\nvideos_folder = root / \"ssbd-raw-videos\"\nframes_folder = root / \"ssbd-frames-5fps\"\n\nannotations = (\n    pd.read_csv(root / \"annotations.csv\")\n    .rename({\"class\": \"activity\"}, axis=1)\n    .query('activity != \"others\"')\n)\n# row = choose(annotations)\nshow(row.to_frame().T)\n\nvideo = videos_folder / f\"{row.video}.mp4\"\nframes = frames_folder / f\"{row.name}.frames.tensor\"\nvideo_to_frames(video, frames, row.start, row.clip_duration, num_frames_per_sec=5)\n\nUsage for all rows in annotations\nroot = P(\"/mnt/347832F37832B388/ml-datasets/ssbd/\")\nannotations_path = root / \"annotations.csv\"\nvideos_folder = root / \"ssbd-raw-videos\"\nframes_folder = root / \"ssbd-frames-5fps\"\nnum_frames_per_sec = 5\nexclude_others = True\n\nextract_frames_for_annotations(\n    annotations_path, videos_folder, frames_folder, num_frames_per_sec=5\n)\n\nimport nbdev\n\nnbdev.nbdev_export()"
+  }
+]
