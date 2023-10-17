@@ -2,4 +2,8 @@ website:
   sidebar:
     contents:
       - index.ipynb
-      - 00_core.ipynb
+      - 00_cli.ipynb
+      - section: data
+        contents:
+          - data/00_create_annotations.ipynb
+          - data/01_download_raw_videos.ipynb
