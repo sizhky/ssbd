@@ -8,3 +8,15 @@ website:
           - data/00_create_annotations.ipynb
           - data/01_download_raw_videos.ipynb
           - data/02_video_to_frames.ipynb
+          - data/03_embeddings_dataset.ipynb
+      - section: model
+        contents:
+          - model/00_frames_to_embeddings.ipynb
+          - model/01_linear.ipynb
+          - model/02_transformer-Copy1.ipynb
+          - model/02_transformer.ipynb
+          - section: backups
+            contents:
+              - section: transformer
+                contents:
+                  - model/backups/02_transformer/02_transformer__0000.html

@@ -72,7 +72,7 @@ def fill_gaps_fn(x):
 
 def assign(x):
     start, end = [int(i) for i in x[0].split(":")]
-    class_ = x[1]
+    class_ = x[1].split("_")[1] if x[1] != "others" else x[1]
     return start, end, class_
 
 
@@ -136,7 +136,7 @@ def setup_annotations(root_folder, fill_gaps: bool = False, videos_folder: str =
 
     frame_data["activity"] = frame_data.apply(fill_gaps_fn, axis=1)
     frame_data = frame_data.explode("activity")
-    frame_data[["start", "end", "class"]] = (
+    frame_data[["start", "end", "label"]] = (
         frame_data["activity"].map(assign).apply(pd.Series)
     )
     frame_data = frame_data.drop(["time", "activity", "duration"], axis=1).reset_index()
@@ -155,9 +155,10 @@ def setup_annotations(root_folder, fill_gaps: bool = False, videos_folder: str =
     annotations.to_csv(save_to, index=False)
     Info(
         f"Annotations contain\n"
-        f"{len(annotations[annotations['class'] != 'others'])} clips excluding 'others' category and\n"
+        f"{len(annotations[annotations['label'] != 'others'])} clips excluding 'others' category and\n"
         f"{len(annotations)} clips including 'others' category\n"
         f"for {annotations.video.nunique()} videos"
     )
+    print(annotations.head())
     Info(f"saved annotations at {save_to}")
     return annotations
