@@ -27,7 +27,10 @@ class Frame2Embeddings:
 
     @torch.no_grad()
     def frames2clip_image_embeddings(self, frames_tensor_path):
-        frames = loaddill(frames_tensor_path)
+        if isinstance(frames_tensor_path, (str, P)):
+            frames = loaddill(frames_tensor_path)
+        else:
+            frames = frames_tensor_path
         frames = [
             (np.array(a) * 255).astype(np.uint8).transpose(1, 2, 0) for a in frames
         ]

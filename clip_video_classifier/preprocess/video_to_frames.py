@@ -43,17 +43,26 @@ def video_to_frames(
     num_frames_per_sec: int = 10,
     side_size: int = 256,
     crop_size: int = 256,
+    verbose=False,
 ):
+    video = EncodedVideo.from_path(video_path)
+    if clip_duration is None:
+        clip_duration = video.duration
+    end_sec = start_sec + clip_duration
+    with notify_waiting("Loading Video Clip"):
+        if verbose:
+            Info(f"Video duration: {video.duration} s")
+        video_data = video.get_clip(start_sec=start_sec, end_sec=end_sec)
+        num_frames = clip_duration * num_frames_per_sec
+        video_data = get_transform(num_frames, side_size, crop_size)(video_data)
+        tensor_data = video_data["video"].permute(1, 0, 2, 3)
+    Info(f"{tensor_data=}")
+    if frames_path is None:
+        return tensor_data
     if exists(frames_path):
         Info(f"Skipping extraction for {frames_path}")
         return
     makedir(parent(frames_path))
-    end_sec = start_sec + clip_duration
-    video = EncodedVideo.from_path(video_path)
-    video_data = video.get_clip(start_sec=start_sec, end_sec=end_sec)
-    num_frames = clip_duration * num_frames_per_sec
-    video_data = get_transform(num_frames, side_size, crop_size)(video_data)
-    tensor_data = video_data["video"].permute(1, 0, 2, 3)
     dumpdill(tensor_data, frames_path)
 
 

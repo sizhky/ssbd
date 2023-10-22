@@ -13,7 +13,6 @@ website:
         contents:
           - model/00_frames_to_embeddings.ipynb
           - model/01_linear.ipynb
-          - model/02_transformer-Copy1.ipynb
           - model/02_transformer.ipynb
           - section: backups
             contents:

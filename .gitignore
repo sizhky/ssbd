@@ -1,6 +1,7 @@
 checkpoint*/
 saved-models/
 _proc/
+artifacts
 
 *.bak
 .gitattributes

@@ -2,46 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/backups/02_transformer/changelog.html</loc>
-    <lastmod>2023-10-22T03:27:57.286Z</lastmod>
+    <lastmod>2023-10-22T06:28:37.516Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/transformer-copy1.html</loc>
-    <lastmod>2023-10-22T03:27:55.870Z</lastmod>
+    <lastmod>2023-10-22T06:28:36.187Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/frames_to_embeddings.html</loc>
-    <lastmod>2023-10-22T03:27:54.424Z</lastmod>
+    <lastmod>2023-10-22T06:28:35.287Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/data/embeddings_dataset.html</loc>
-    <lastmod>2023-10-22T03:27:52.740Z</lastmod>
+    <lastmod>2023-10-22T06:28:34.543Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/data/download_raw_videos.html</loc>
-    <lastmod>2023-10-22T03:27:51.692Z</lastmod>
+    <lastmod>2023-10-22T06:28:33.421Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/00_cli.html</loc>
-    <lastmod>2023-10-22T03:27:50.462Z</lastmod>
+    <lastmod>2023-10-22T06:28:32.566Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/data/create_annotations.html</loc>
-    <lastmod>2023-10-22T03:27:51.097Z</lastmod>
+    <lastmod>2023-10-22T06:28:33.094Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/data/video_to_frames.html</loc>
-    <lastmod>2023-10-22T03:27:52.224Z</lastmod>
+    <lastmod>2023-10-22T06:28:33.893Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/index.html</loc>
-    <lastmod>2023-10-22T03:27:53.663Z</lastmod>
+    <lastmod>2023-10-22T06:28:34.995Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/linear.html</loc>
-    <lastmod>2023-10-22T03:27:55.145Z</lastmod>
+    <lastmod>2023-10-22T06:28:35.633Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/transformer.html</loc>
-    <lastmod>2023-10-22T03:27:56.595Z</lastmod>
+    <lastmod>2023-10-22T06:28:37.175Z</lastmod>
   </url>
 </urlset>
