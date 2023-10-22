@@ -12,8 +12,9 @@ from clip_video_classifier.models.transformer_encoder import (
 )
 from clip_video_classifier.models.frame_embeddings import Frame2Embeddings
 from clip_video_classifier.data.dataset import ClipEmbeddingsDataset
-from transformers import Trainer, TrainingArguments
+from clip_video_classifier.models.inference import Inference
 from torch_snippets import *
+from functools import lru_cache
 
 # Create a FastAPI instance
 app = FastAPI()
@@ -30,25 +31,9 @@ artifacts_dir = P(
     )
 )
 
+
 # Load your trained video classification model
-model = TransformerEncoder(4, 512, 128)
-load_torch_model_weights_to(model, artifacts_dir / "a/pytorch_model.bin", device="cpu")
-model.eval()
-
-clip = Frame2Embeddings(device="cpu")
-
-training_args = TrainingArguments(
-    output_dir=predictions_dir,
-    per_device_train_batch_size=32,
-    per_device_eval_batch_size=64,
-    label_names=["targets"],
-)
-
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    data_collator=collate_fn,
-)
+inference = Inference(artifacts_dir / "a/pytorch_model.bin")
 
 
 # Define an endpoint for video classification
@@ -66,31 +51,8 @@ async def classify_video(file: UploadFile = File(...)):
             video_file.write(contents)
         Info(f"Video written at {video_path}")
         # Process the video frames and classify
-        frames = video_to_frames(
-            video_path, frames_path=None, start_sec=0, clip_duration=5, verbose=True
-        )
-
-        # Make predictions
-        with torch.no_grad():
-            input = clip.frames2clip_image_embeddings(frames)
-            input = {"embeddings": input}
-            Info(f"{input=}")
-            input = collate_fn([input])
-            predictions = model(**input)
-            predictions = F.softmax(predictions["logits"], dim=-1)
-            Info(f"{predictions=}")
-            confidence, predicted_class = predictions.max(1)
-            predicted_class = ClipEmbeddingsDataset.id2label[predicted_class.item()]
-            confidence = confidence.item()
-            Info(f"{predicted_class=} @ {confidence=}")
-
-        # Return the predicted class
-        return JSONResponse(
-            content={
-                "predicted_class": predicted_class,
-                "confidence": f"{confidence:.2f}",
-            }
-        )
+        content = inference.predict_on_video_path(video_path)
+        return JSONResponse(content=content)
 
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)

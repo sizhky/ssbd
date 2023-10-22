@@ -14,6 +14,7 @@ website:
           - model/00_frames_to_embeddings.ipynb
           - model/01_linear.ipynb
           - model/02_transformer.ipynb
+          - model/03_infer.ipynb
           - section: backups
             contents:
               - section: transformer

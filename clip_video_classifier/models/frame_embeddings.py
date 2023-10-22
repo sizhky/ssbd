@@ -12,6 +12,7 @@ import clip
 # %% ../../nbs/model/00_frames_to_embeddings.ipynb 4
 class Frame2Embeddings:
     def __init__(self, model="ViT-B/32", device="cuda", batch_size=16):
+        self.device = device
         self.model, self.preprocess = clip.load(model, device=device)
         self.batch_size = batch_size
 
@@ -35,7 +36,7 @@ class Frame2Embeddings:
             (np.array(a) * 255).astype(np.uint8).transpose(1, 2, 0) for a in frames
         ]
         frames = [Image.fromarray(im) for im in frames]
-        frames = torch.stack([self.preprocess(im) for im in frames]).to(device)
+        frames = torch.stack([self.preprocess(im) for im in frames]).to(self.device)
         batches = torch.split(frames, self.batch_size)
         embeddings = []
         for batch in batches:
