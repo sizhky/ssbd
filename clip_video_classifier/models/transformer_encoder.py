@@ -53,15 +53,12 @@ class TransformerEncoder(nn.Module):
         self.linear = nn.Linear(d_model, num_classes)
         self.main_input_name = "embeddings"
         self.loss_fn = nn.CrossEntropyLoss()
-        self.dropout = 0.25
 
     def forward(self, embeddings, attention_mask, targets=None):
         embeddings = self.positional_encoding(embeddings)
-        # embeddings = F.dropout(embeddings, self.dropout)
         transformer_output = self.transformer_encoder(
             embeddings.swapaxes(1, 0), src_key_padding_mask=attention_mask.bool()
         ).swapaxes(1, 0)
-        # transformer_output = F.dropout(transformer_output, self.dropout)
         pooled_output = transformer_output.mean(dim=1)
         logits = self.linear(pooled_output)
         if targets is not None:
