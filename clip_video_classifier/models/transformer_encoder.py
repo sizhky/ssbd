@@ -53,6 +53,14 @@ class TransformerEncoder(nn.Module):
         self.linear = nn.Linear(d_model, num_classes)
         self.main_input_name = "embeddings"
         self.loss_fn = nn.CrossEntropyLoss()
+        self.config = dict(
+            transformer_layers=transformer_layers,
+            emb_size=emb_size,
+            max_len=max_len,
+            num_classes=num_classes,
+            d_model=d_model,
+            n_head=n_head,
+        )
 
     def forward(self, embeddings, attention_mask, targets=None):
         embeddings = self.positional_encoding(embeddings)

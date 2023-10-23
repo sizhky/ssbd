@@ -63,7 +63,7 @@ def video_to_frames(
     crop_size: int = 256,
     verbose=False,
 ):
-    video = EncodedVideo.from_path(video_path)
+    video = get_video(video_path)
     if clip_duration is None:
         clip_duration = video.duration
     end_sec = start_sec + clip_duration
