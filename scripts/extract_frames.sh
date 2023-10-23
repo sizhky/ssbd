@@ -3,12 +3,16 @@ for row_index in $(seq 0 481)
 do
     echo $row_index
     clip-video-classifier extract-frames-for-annotations \
-        /mnt/347832F37832B388/ml-datasets/ssbd/annotations.csv \
+        # annotations csv
+        /mnt/347832F37832B388/ml-datasets/ssbd/annotations.csv \ 
+        # raw videos path
         /mnt/347832F37832B388/ml-datasets/ssbd/ssbd-raw-videos/ \
+        # path to store annotations and number of frames per second, 
+        # higher the frames, better the data quality and larger the storage volue
         /mnt/347832F37832B388/ml-datasets/ssbd/ssbd-frames/10fps/ --num-frames-per-sec 10 \
         --no-exclude-others \
         --row-index=$row_index &
-    # Limit the number of parallel processes to 5
+    # Limit the number of parallel processes to as many as you want, default 1
     if [ $(jobs | wc -l) -ge 0 ]; then
         wait
     fi

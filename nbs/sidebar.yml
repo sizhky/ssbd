@@ -14,9 +14,66 @@ website:
           - model/00_frames_to_embeddings.ipynb
           - model/01_linear.ipynb
           - model/02_transformer.ipynb
+          - model/02_transformer_clip.ipynb
           - model/03_infer.ipynb
+          - model/04_slowr50_feature_extractor.ipynb
+          - model/05_transformer_r50.ipynb
+          - model/06_timm_feature_extractor.ipynb
+          - model/07.00_transformer_timm_resnet18.ipynb
+          - model/07.01_transformer_timm_vgg19.ipynb
+          - model/07.02_transformer_timm_resnet50.ipynb
+          - model/07.03_transformer_timm_densenet121.ipynb
           - section: backups
             contents:
               - section: transformer
                 contents:
                   - model/backups/02_transformer/02_transformer__0000.html
+      - section: model
+        contents:
+          - section: backups
+            contents:
+              - section: transformer_clip
+                contents:
+                  - model/backups/02_transformer_clip/02_transformer_clip__0000.html
+      - section: model
+        contents:
+          - section: backups
+            contents:
+              - section: transformer_r50
+                contents:
+                  - model/backups/05_transformer_r50/05_transformer_r50__0000.html
+      - section: model
+        contents:
+          - section: backups
+            contents:
+              - section: 07.00_transformer_timm_resnet18
+                contents:
+                  - model/backups/07.00_transformer_timm_resnet18/07.00_transformer_timm_resnet18__0000.html
+      - section: model
+        contents:
+          - section: backups
+            contents:
+              - section: 07.00_transformer_timm_resnet18
+                contents:
+                  - model/backups/07.00_transformer_timm_resnet18/07.00_transformer_timm_resnet18__0001.html
+      - section: model
+        contents:
+          - section: backups
+            contents:
+              - section: 07.01_transformer_timm_vgg19
+                contents:
+                  - model/backups/07.01_transformer_timm_vgg19/07.01_transformer_timm_vgg19__0000.html
+      - section: model
+        contents:
+          - section: backups
+            contents:
+              - section: 07.02_transformer_timm_resnet50
+                contents:
+                  - model/backups/07.02_transformer_timm_resnet50/07.02_transformer_timm_resnet50__0000.html
+      - section: model
+        contents:
+          - section: backups
+            contents:
+              - section: 07.03_transformer_timm_densenet121
+                contents:
+                  - model/backups/07.03_transformer_timm_densenet121/07.03_transformer_timm_densenet121__0000.html

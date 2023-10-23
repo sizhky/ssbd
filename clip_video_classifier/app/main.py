@@ -14,7 +14,6 @@ from clip_video_classifier.models.frame_embeddings import Frame2Embeddings
 from clip_video_classifier.data.dataset import ClipEmbeddingsDataset
 from clip_video_classifier.models.inference import Inference
 from torch_snippets import *
-from functools import lru_cache
 
 # Create a FastAPI instance
 app = FastAPI()
@@ -37,6 +36,27 @@ inference = Inference(artifacts_dir / "a/pytorch_model.bin")
 
 
 # Define an endpoint for video classification
+@app.post("/classify_video_first_five_seconds/")
+async def classify_video(file: UploadFile = File(...)):
+    try:
+        # Read the uploaded video file
+        request_id = rand()
+        # Define the file path to save the video
+        video_path = request_dir / f"{request_id}/video.mp4"
+        makedir(parent(video_path))
+        video_path = str(video_path)  # Convert to a string
+        contents = file.file.read()
+        with open(video_path, "wb") as video_file:
+            video_file.write(contents)
+        Info(f"Video written at {video_path}")
+        # Process the video frames and classify
+        content = inference.predict_on_video_path(video_path, start_sec=0)
+        return JSONResponse(content=content)
+
+    except Exception as e:
+        return JSONResponse(content={"error": str(e)}, status_code=500)
+
+
 @app.post("/classify_video/")
 async def classify_video(file: UploadFile = File(...)):
     try:
