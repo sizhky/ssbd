@@ -2,102 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/backups/07.03_transformer_timm_densenet121/changelog.html</loc>
-    <lastmod>2023-10-23T18:37:21.353Z</lastmod>
+    <lastmod>2023-10-23T18:45:33.326Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/backups/07.01_transformer_timm_vgg19/changelog.html</loc>
-    <lastmod>2023-10-23T18:37:20.106Z</lastmod>
+    <lastmod>2023-10-23T18:45:32.164Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/backups/05_transformer_r50/changelog.html</loc>
-    <lastmod>2023-10-23T18:37:18.997Z</lastmod>
+    <lastmod>2023-10-23T18:45:30.871Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/backups/02_transformer/changelog.html</loc>
-    <lastmod>2023-10-23T18:37:17.835Z</lastmod>
+    <lastmod>2023-10-23T18:45:29.910Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/07.02_transformer_timm_resnet50.html</loc>
-    <lastmod>2023-10-23T18:37:16.317Z</lastmod>
+    <lastmod>2023-10-23T18:45:28.620Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/07.00_transformer_timm_resnet18.html</loc>
-    <lastmod>2023-10-23T18:37:14.325Z</lastmod>
+    <lastmod>2023-10-23T18:45:26.556Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/transformer_r50.html</loc>
-    <lastmod>2023-10-23T18:37:12.985Z</lastmod>
+    <lastmod>2023-10-23T18:45:25.129Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/infer.html</loc>
-    <lastmod>2023-10-23T18:37:11.354Z</lastmod>
+    <lastmod>2023-10-23T18:45:23.633Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/transformer.html</loc>
-    <lastmod>2023-10-23T18:37:09.893Z</lastmod>
+    <lastmod>2023-10-23T18:45:22.309Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/frames_to_embeddings.html</loc>
-    <lastmod>2023-10-23T18:37:08.041Z</lastmod>
+    <lastmod>2023-10-23T18:45:20.634Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/data/embeddings_dataset.html</loc>
-    <lastmod>2023-10-23T18:37:06.216Z</lastmod>
+    <lastmod>2023-10-23T18:45:19.181Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/data/download_raw_videos.html</loc>
-    <lastmod>2023-10-23T18:37:04.949Z</lastmod>
+    <lastmod>2023-10-23T18:45:18.056Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/00_cli.html</loc>
-    <lastmod>2023-10-23T18:37:03.585Z</lastmod>
+    <lastmod>2023-10-23T18:45:16.787Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/data/create_annotations.html</loc>
-    <lastmod>2023-10-23T18:37:04.272Z</lastmod>
+    <lastmod>2023-10-23T18:45:17.490Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/data/video_to_frames.html</loc>
-    <lastmod>2023-10-23T18:37:05.473Z</lastmod>
+    <lastmod>2023-10-23T18:45:18.606Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/index.html</loc>
-    <lastmod>2023-10-23T18:37:07.159Z</lastmod>
+    <lastmod>2023-10-23T18:45:20.030Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/linear.html</loc>
-    <lastmod>2023-10-23T18:37:09.045Z</lastmod>
+    <lastmod>2023-10-23T18:45:21.287Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/transformer_clip.html</loc>
-    <lastmod>2023-10-23T18:37:10.650Z</lastmod>
+    <lastmod>2023-10-23T18:45:22.977Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/slowr50_feature_extractor.html</loc>
-    <lastmod>2023-10-23T18:37:12.096Z</lastmod>
+    <lastmod>2023-10-23T18:45:24.342Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/timm_feature_extractor.html</loc>
-    <lastmod>2023-10-23T18:37:13.622Z</lastmod>
+    <lastmod>2023-10-23T18:45:25.823Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/07.01_transformer_timm_vgg19.html</loc>
-    <lastmod>2023-10-23T18:37:15.453Z</lastmod>
+    <lastmod>2023-10-23T18:45:27.473Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/07.03_transformer_timm_densenet121.html</loc>
-    <lastmod>2023-10-23T18:37:17.170Z</lastmod>
+    <lastmod>2023-10-23T18:45:29.412Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/backups/02_transformer_clip/changelog.html</loc>
-    <lastmod>2023-10-23T18:37:18.407Z</lastmod>
+    <lastmod>2023-10-23T18:45:30.167Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/backups/07.00_transformer_timm_resnet18/changelog.html</loc>
-    <lastmod>2023-10-23T18:37:19.493Z</lastmod>
+    <lastmod>2023-10-23T18:45:31.568Z</lastmod>
   </url>
   <url>
     <loc>https://sizhky.github.io/clip-video-classifier/model/backups/07.02_transformer_timm_resnet50/changelog.html</loc>
-    <lastmod>2023-10-23T18:37:20.717Z</lastmod>
+    <lastmod>2023-10-23T18:45:32.730Z</lastmod>
   </url>
 </urlset>

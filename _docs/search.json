@@ -91,13 +91,6 @@
     "text": "git clone https://github.com/sizhky/ssbd\ncd ssbd\npip install -e ."
   },
   {
-    "objectID": "index.html#how-to-use",
-    "href": "index.html#how-to-use",
-    "title": "clip-video-classifier",
-    "section": "How to use",
-    "text": "How to use\nUse\nclip-video-classifier --help\nclip-video-classifier COMMAND --help\nto see help for all commands\n\nTo train a transformer model on SSBD videos using CLIP as feature extractor\n\nFirst setup your annotations\n\nDATA_DIR=\"/mnt/347832F37832B388/ml-datasets/ssbd\"\nRAW_VIDEO_DIR=\"$DATA_DIR/ssbd-raw-videos\"\nclip-video-classifier setup-annotations $DATA_DIR\nclip-video-classifier download-raw-videos $DATA_DIR/annotations.csv $RAW_VIDEO_DIR\nclip-video-classifier setup-annotations $DATA_DIR --fill-gaps --videos-folder $RAW_VIDEO_DIR\n\nNext extract frames for each video\n\n# change the num-frames-per-sec in the below script if needed\n$ chmod +x scripts/extract_frames.sh\n$ ./extract_frames.sh\n\nNow extract embeddings for each frames.tensor file saved\n\nclip-video-classifier frames-to-embeddings \"/mnt/347832F37832B388/ml-datasets/ssbd/ssbd-frames/5fps\" \"/mnt/347832F37832B388/ml-datasets/ssbd/ssbd-embeddings/5fps\" \"ViT-B/32\" \"cuda\""
-  },
-  {
     "objectID": "model/linear.html",
     "href": "model/linear.html",
     "title": "Train Embeddings Using a linear Probe",

@@ -10,7 +10,7 @@ cd ssbd
 pip install -e .
 ```
 
-## How to use
+# How to use
 
 Use
 
@@ -49,3 +49,21 @@ $ ./extract_frames.sh
 ``` bash
 clip-video-classifier frames-to-embeddings "/mnt/347832F37832B388/ml-datasets/ssbd/ssbd-frames/5fps" "/mnt/347832F37832B388/ml-datasets/ssbd/ssbd-embeddings/5fps" "ViT-B/32" "cuda"
 ```
+
+4.  Finally you can run the notebook
+    `nbs/models/02_transformer_clip.ipynb` by pointing to the
+    approprirate ssbd-embeddings folder and setting the right
+    hyperparameters
+
+# API
+
+You can directly run the notebook `nbs/model/03_infer.ipynb` to load the
+deeplearning model and make predictions on every 5 second intervals
+
+or
+
+You can launch a fastapi server
+`uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload` and send a
+post request like so
+
+<img src='https://i.imgur.com/n02QPzW.png' alt='image' height='400'>

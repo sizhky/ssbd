@@ -99,10 +99,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="clip-video-classifier">
 <meta property="og:description" content="assignment repo for video classification of ssbd dataset using CLIP">
+<meta property="og:image" content="https://i.imgur.com/n02QPzW.png">
 <meta property="og:site-name" content="clip-video-classifier">
 <meta name="twitter:title" content="clip-video-classifier">
 <meta name="twitter:description" content="assignment repo for video classification of ssbd dataset using CLIP">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/n02QPzW.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -533,6 +535,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install">Install</a></li>
   <li><a href="#how-to-use" id="toc-how-to-use" class="nav-link" data-scroll-target="#how-to-use">How to use</a></li>
+  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sizhky/clip-video-classifier/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -568,8 +571,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ssbd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="how-to-use" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use">How to use</h2>
+<section id="how-to-use" class="level1">
+<h1>How to use</h1>
 <p>Use</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">clip-video-classifier</span> <span class="at">--help</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">clip-video-classifier</span> COMMAND <span class="at">--help</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -594,6 +597,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Now extract embeddings for each <code>frames.tensor</code> file saved</li>
 </ol>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">clip-video-classifier</span> frames-to-embeddings <span class="st">"/mnt/347832F37832B388/ml-datasets/ssbd/ssbd-frames/5fps"</span> <span class="st">"/mnt/347832F37832B388/ml-datasets/ssbd/ssbd-embeddings/5fps"</span> <span class="st">"ViT-B/32"</span> <span class="st">"cuda"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Finally you can run the notebook <code>nbs/models/02_transformer_clip.ipynb</code> by pointing to the approprirate ssbd-embeddings folder and setting the right hyperparameters</li>
+</ol>
+</section>
+<section id="api" class="level1">
+<h1>API</h1>
+<p>You can directly run the notebook <code>nbs/model/03_infer.ipynb</code> to load the deeplearning model and make predictions on every 5 second intervals</p>
+<p>or</p>
+<p>You can launch a fastapi server <code>uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload</code> and send a post request like so</p>
+<p><img src="https://i.imgur.com/n02QPzW.png" alt="image" height="400"></p>
 
 
 </section>
